@@ -1,0 +1,27 @@
+<form class="container" [formGroup]="rechargeFoam">
+    <div class="title">
+        <h3>Recharge here</h3>
+    </div>
+<input type="email" placeholder="enter email" [formControl]="email">
+<h5 class="red-text" [hidden]="email.valid || email.untouched">
+    Email is required and must be a valid email address.
+</h5>
+<input type="text" placeholder="enter Mobile number" [formControl]="mobNo">
+<h5 class="red-text" [hidden]="mobNo.valid || mobNo.untouched">
+    Mobile Number Must be 10 Digit
+</h5>
+<select id="plan" [formControl]="ammount">
+    <option value="250">₹250 - 28-Days(1 gb/day , unlimited calls and message)</option>
+    <option value="500">₹500 - 50-Days(3 gb/day , unlimited calls and message)</option>
+    <option value="19">₹19 - 1-Days(1 gb/24 hr , unlimited calls and message)</option>
+    <option value="3000">₹3000 - 365-Days(2 gb/day , unlimited calls and message)</option>
+  </select>
+<select id="sim" [formControl]="service">
+  <option value="Jio">Jio</option>
+  <option value="Vi">Vi</option>
+  <option value="Airtel">Airtel</option>
+  <option value="Bsnl">Bsnl</option>
+</select>
+<button class="btn-green" [disabled]="rechargeFoam.invalid" (click)="recharge()">recharge</button>
+
+</form>

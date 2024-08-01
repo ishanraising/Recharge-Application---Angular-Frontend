@@ -1,0 +1,16 @@
+
+<form class="container" [formGroup]="loginForm">
+    <div class="title">
+       <h3>Login Here</h3>
+    </div>
+    <input type="email" placeholder="Enter email here" [formControl]="email" />
+    <h5 class="red-text" [hidden]="email.valid || email.untouched">
+        Email is required and must be a valid email address.
+    </h5>
+    <input type="password" placeholder="Enter password here" [formControl]="password" />
+    <h5 class="red-text" [hidden]="email.valid || email.untouched">
+        Password is required and must be at least 4 characters long.
+    </h5>
+    <button class="btn-green" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+    <button class="btn-green" routerLink="/register">new..?</button>
+</form>

@@ -1,0 +1,20 @@
+<form class="container" [formGroup]="registranFoam">
+    <div class="title">
+        <h3>Register Here </h3>
+    </div>
+    <input type="text" placeholder="Enter your name here" [formControl]="userName" />
+    <h5 class="red-text" [hidden]="userName.valid || userName.untouched"> Name is required</h5>
+    <input type="email" placeholder="Enter email here"  [formControl]="email"/>
+    <h5 class="red-text" [hidden]="email.valid || email.untouched"> Enter correct Email</h5>
+    <input type="password" placeholder="Enter password here" [formControl]="password" />
+    <h5 class="red-text" [hidden]="password.valid || password.untouched">password length must be greater than 4</h5>
+    <input type="text" placeholder="enter Mobile number" [formControl]="mobNo">
+    <h5 class="red-text" [hidden]="mobNo.valid || mobNo.untouched">
+    Mobile Number Must be 10 Digit
+    </h5>
+    <input type="text" placeholder="Enter Account Number here" [formControl]="accNo" />
+    <h5 class="red-text" [hidden]="accNo.valid || accNo.untouched"> Invalid Account Number</h5>
+    <input type="number" placeholder="Enter Account Balance here" [formControl]="accBal" />
+    <h5 class="red-text" [hidden]="accBal.valid || accBal.untouched"> Account Balance required</h5>
+    <button class="btn-green" [disabled]="registranFoam.invalid" (click)="register()">Register</button>
+</form>
